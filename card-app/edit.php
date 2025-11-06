@@ -68,9 +68,9 @@ if (isset($_POST['update'])) {
 
  
 
-  $query1="update studnet set name='$name',email='$email',phone='$phone',city='$city', where id='$id'";
-
-  
+  $query1 = "UPDATE studnet 
+           SET name='$name', email='$email', phone='$phone', city='$city' 
+           WHERE id='$id'";
 
   $sql1= mysqli_query($connection,$query1);
 
