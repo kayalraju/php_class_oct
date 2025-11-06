@@ -45,8 +45,8 @@
         <td><?= $rows['email']?></td>
         <td><?= $rows['phone']?></td>
         <td><?= $rows['city'] ?></td>
-        <td><a href='' class="btn btn-primary">Edit</a></td>
-        <td><a href='' class="btn btn-danger">Delete</a></td>
+        <td><a href='<?php echo "edit.php?id=".$rows['id']?>' class="btn btn-primary">Edit</a></td>
+        <td><a href='<?php echo "delete.php?id=".$rows['id']?>' class="btn btn-danger">Delete</a></td>
       </tr>
       
       <?php } ?>
