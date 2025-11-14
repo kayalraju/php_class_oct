@@ -25,6 +25,8 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">City</th>
+      <th scope="col">Image</th>
+      <th scope="col">Hobbies</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -38,13 +40,18 @@
         echo "<tr><td colspan='10' class='text-center'>No Records Found</td></tr>";
       }
       ?>
-      <?php while($rows=mysqli_fetch_assoc($query)) {?>
+      <?php 
+      $index = 1; // ✅ Initialize counter before loop
+      while($rows=mysqli_fetch_assoc($query)) {?>
+        
       <tr>
-        <td><?= $rows['id']?></td>
+        <td><?= $index ++ ?></td>
         <td><?= $rows['name']?></td>
         <td><?= $rows['email']?></td>
         <td><?= $rows['phone']?></td>
         <td><?= $rows['city'] ?></td>
+        <td><img src="uploads/<?= $rows['file_name'] ?>" height="50" width="50" alt="Student Image"></td>
+        <td><?= $rows['hobbies']?></td>
         <td><a href='<?php echo "edit.php?id=".$rows['id']?>' class="btn btn-primary">Edit</a></td>
         <td><a href='<?php echo "delete.php?id=".$rows['id']?>' class="btn btn-danger">Delete</a></td>
       </tr>

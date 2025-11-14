@@ -53,6 +53,30 @@ echo $hello;
 echo $name;
 
 ?>
+
+
+
+<br>
+<hr>
+
+<?php 
+
+// Declare variable and initialize it
+$x = "Raju";     
+
+// Reference variable
+$$x = "Rajukayal";
+
+// Display value of x
+echo $x . "\n"; 
+
+// Display value of $$x ($Geeks)
+echo $$x . "\n"; 
+
+// Display value of $Geeks
+echo "$Raju";
+
+?>
 </body>
 </html>
 
