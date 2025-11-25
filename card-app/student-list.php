@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])){
+     $_SESSION['error_message'] = "You must log in first.";
+    header('Location:login.php');
+    exit();
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +45,8 @@
 
       <?php
       include('./dbConnection.php');
-      $sql="select * from studnet";
+      //$sql="select * from studnet order by id desc";
+      $sql="select * from studnet limit 2 ";
       $query=mysqli_query($connection,$sql);
       if(mysqli_num_rows($query)==0){
         echo "<tr><td colspan='10' class='text-center'>No Records Found</td></tr>";

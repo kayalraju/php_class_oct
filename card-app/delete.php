@@ -1,4 +1,14 @@
+<?php
+session_start();
 
+if(!isset($_SESSION['id'])){
+     $_SESSION['error_message'] = "You must log in first.";
+    header('Location:login.php');
+    exit();
+}
+
+
+?>
 <?php
 
 include('./dbConnection.php');

@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])){
+     $_SESSION['error_message'] = "You must log in first.";
+    header('Location:login.php');
+    exit();
+}
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,6 +22,8 @@
 <body>
 <div class="container">
   <h1 class="mt-4 mb-4">Add Student</h1>
+
+  <h1>hi.. <?php echo $_SESSION['name']; ?></h1>
 
   <?php
   include('./dbConnection.php');
